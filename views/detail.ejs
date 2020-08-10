@@ -16,4 +16,14 @@
     <div>
         <h3>Awards: <%= e.Awards %></h3>
     </div>
+        <div class="well">
+          <form method="POST" action="/fave">
+            <input hidden type="text" name="title" value="<%= e.Title %>">
+            <input hidden type="text" name="imdbID" value="<%= e.imdbID %>">
+            <button class="btn btn-primary" type="submit">Add to Favorites</button>
+          </form>
+        </div>
+    
+    
+
 

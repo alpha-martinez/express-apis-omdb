@@ -3,6 +3,7 @@ const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
 const axios = require('axios');
+const db = require('./models');
 
 let API_KEY = process.env.API_KEY
 
@@ -19,6 +20,7 @@ app.use(ejsLayouts);
 app.use(require('morgan')('dev'));
 
 // Routes
+app.use('/fave', require('./routes/faves'));
 
 app.get('/', (req, res) => {
   res.render('index')
@@ -66,10 +68,7 @@ app.get('/movies/:id', (req, res) => {
       console.log(err)
   })
 
-})
-
-
-
+})  
 
 
 // The app.listen function returns a server handle

@@ -1,0 +1,13 @@
+<% fave.forEach((p)=>{ %>
+    <div>
+      <h3>
+        <a class='name' href="/detail/<%= p.title %>">
+          <%= p.title %>
+          <%= p.Poster %>
+        </a>
+      </h3>
+      <form method="POST" action="/pokemon?_method=DELETE">
+        <input type="hidden" name="name" value="<%= p.title %>" />
+      </form>
+    </div>
+    <% }); %>
